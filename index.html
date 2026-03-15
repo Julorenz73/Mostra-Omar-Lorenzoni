@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un invito allo sguardo — Omar Lorenzoni</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:   #F7F4EF;
+    --warm:    #EDE8E1;
+    --accent:  #7A3F34;
+    --accent2: #A05A4A;
+    --text:    #1A1A1A;
+    --mid:     #555555;
+    --lite:    #888888;
+    --rule:    #C8C0B8;
+    --box-bg:  #EDEBE6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { font-size: 18px; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'EB Garamond', Georgia, serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--text);
+    padding: 2.4rem 1.6rem 2rem;
+    position: relative;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    left: 1.6rem;
+    top: 1.6rem;
+    bottom: 1.6rem;
+    width: 3px;
+    background: var(--accent2);
+  }
+
+  .header-inner { padding-left: 1.2rem; }
+
+  .header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #F5F2ED;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+
+  .header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--accent2);
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 1.8rem 0 0.4rem;
+  }
+
+  /* ── RULE ── */
+  .rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 1.6rem 0;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ── BODY TEXT ── */
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* ── SUBSECTION HEADS ── */
+  .sub-head {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 1.4rem 0 0.4rem;
+  }
+
+  /* ── POEM ── */
+  .poem-wrapper {
+    margin: 1.6rem 0;
+    padding: 0.4rem 0 0.4rem 1.2rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .poem-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+
+  .poem-author strong {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .poem-author span {
+    color: var(--lite);
+  }
+
+  .poem {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .poem-stanza {
+    margin-bottom: 1rem;
+  }
+
+  .poem-line {
+    display: block;
+  }
+
+  /* ── BOX PLATH ── */
+  .box-plath {
+    background: var(--box-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 0.9rem 1rem 0.9rem 1.1rem;
+    margin: 1.6rem 0;
+  }
+
+  .box-plath p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: var(--mid);
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  /* ── PONTE (testo dopo Plath) ── */
+  .ponte {
+    font-style: italic;
+    color: var(--mid);
+  }
+
+  /* ── CHIUSURA ── */
+  .chiusura {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin: 1.6rem 0 0.6rem;
+  }
+
+  .firma {
+    font-size: 0.88rem;
+    color: var(--lite);
+    margin-bottom: 0.2rem;
+  }
+
+  /* ── MAGRITTE ── */
+  .magritte {
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--rule);
+    text-align: center;
+    padding: 1.2rem 0 0.4rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--warm);
+    padding: 1.6rem 1.4rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.82rem;
+    color: var(--lite);
+    text-align: center;
+    margin-bottom: 0.2rem;
+  }
+
+  /* ── HIGHLIGHT ── */
+  .key-line {
+    font-size: 1.08rem;
+    font-style: italic;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 0.9rem;
+    margin: 1.4rem 0;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 400px) {
+    html { font-size: 17px; }
+    .header h1 { font-size: 1.55rem; }
+  }
+
+  @media (min-width: 600px) {
+    html { font-size: 19px; }
+    .header { padding: 3rem 2.4rem 2.4rem; }
+    .header::before { left: 2.4rem; top: 2rem; bottom: 2rem; }
+    .header-inner { padding-left: 1.6rem; }
+    .container { padding: 0 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <h1>Un invito allo sguardo</h1>
+    <p class="subtitle">Fotografie di Omar Lorenzoni</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- APERTURA -->
+  <section>
+    <p>In questa mostra non troverete nessuna didascalia a spiegare cosa state vedendo. È una scelta deliberata del fotografo: il piacere e la responsabilità di interpretare appartengono a chi guarda. E queste parole non sono una guida: non pretendono di indicare o risolvere. Questo testo è, tutt'al più, una soglia.</p>
+    <p>Una soglia che vale la pena attraversare nel senso pieno del termine. La parola "esperienza" viene da una radice comune a tante lingue: <em>per</em>, la stessa radice di "percorrere", di "esperimento", di "pericolo". Si entra in un'esperienza correndo un rischio. Si attraversa uno spazio, un momento, e se ne esce diversi: qualcosa si perde, qualcosa si guadagna. Non è detto capire subito cosa ci è accaduto dopo aver attraversato quella soglia.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- IL PERCORSO -->
+  <section>
+    <h2 class="sec-title">Il percorso</h2>
+    <p>Le prime due sale ospitano il nucleo del progetto "Riflessioni". Il titolo porta in sé un doppio senso che non è casuale: <em>ri-flectere</em>, piegare indietro: la luce che torna, il pensiero che torna su se stesso. Riflessi fisici dello specchio e riflessioni mentali, tenute insieme dal filo comune della fotografia. L'ultima sala ospita invece dei lavori in via di sviluppo, con titoli provvisori:</p>
+
+    <p class="sub-head">La distanza dello sguardo</p>
+    <p>Immagini ricomposte in mosaico, geometrie che si moltiplicano senza mai risolversi in un disegno riconoscibile. In un'epoca in cui la nostra attenzione è contesa da ogni parte, queste fotografie non consolano: mostrano il caos e chiedono di fermarsi.</p>
+
+    <p class="sub-head">Trame di identità</p>
+    <p>Sottili strisce di immagini tagliate e intrecciate fisicamente, fino a generare una composizione nuova, quasi tattile di ritratti che sembrano ribellarsi alla tradizionale bidimensionalità della fotografia: la "trama", parola che appartiene insieme alla tessitura e alla narrazione, diventa qui un gesto artigiano, materico. Narrare e riparare, fare e disfare come la tela di Penelope. L'identità non è mai finita, non è mai intera. Spostamenti, sostituzioni, slittamenti di senso sono parte di chi siamo, e la tela di queste immagini suggerisce la tendenza umana a raccontarsi, a costruire ogni giorno versioni di sé.</p>
+
+    <p class="sub-head">Silenzio verde</p>
+    <p>Qui le trame non le tessiamo noi, raccontandoci. Sono quelle della natura: silenziose, millenarie, scritte su foglie, fiori e cortecce. Ma lo sguardo che le osserva è inquieto. Ciò che a prima vista sembra decorativo è, in realtà, un atto di denuncia: il segno di una mano, quella dell'antropocene, che ha spostato equilibri antichi. La natura appare ancora riconoscibile nelle sue forme, ma non è più la stessa. Seppur mutilata, resiste.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- SPECCHIO -->
+  <section>
+    <h2 class="sec-title">Il progetto "Riflessioni": pensieri sullo specchio</h2>
+
+    <p>Di specchi è piena la nostra cultura, la nostra letteratura, la nostra memoria collettiva. "Specchio, specchio delle mie brame"… tutti sappiamo come va a finire. O il ritratto di Dorian Gray, che invecchia e si deforma al posto suo diventando specchio della sua anima corrotta, impietoso come solo gli specchi sanno essere.</p>
+    <p>Ma lo specchio al centro di questa mostra è un altro. Prima di incontrarlo, vale la pena fermarsi su un altro specchio letterario, forse uno dei più precisi e crudeli.</p>
+
+    <!-- PLATH -->
+    <div class="poem-wrapper">
+      <p class="poem-author"><strong>Sylvia Plath</strong> <span>— Mirror, 1961</span></p>
+      <div class="poem">
+        <div class="poem-stanza">
+          <span class="poem-line">Sono d'argento e rigoroso. Non ho preconcetti.</span>
+          <span class="poem-line">Quello che vedo lo ingoio all'istante</span>
+          <span class="poem-line">così com'è, non velato da amore o da avversione.</span>
+          <span class="poem-line">Non sono crudele, sono solo veritiero —</span>
+          <span class="poem-line">l'occhio di un piccolo dio, quadrangolare.</span>
+          <span class="poem-line">Passo molte ore a meditare sulla parete di fronte.</span>
+          <span class="poem-line">È rosa e macchiettata. La guardo da tanto tempo</span>
+          <span class="poem-line">che credo faccia parte del mio cuore. Ma c'è e non c'è.</span>
+          <span class="poem-line">Facce e buio ci separano ripetutamente.</span>
+        </div>
+        <div class="poem-stanza">
+          <span class="poem-line">Ora sono un lago. Una donna si china su di me,</span>
+          <span class="poem-line">cercando nella mia distesa ciò che essa è veramente.</span>
+          <span class="poem-line">Poi si volge alle candele o alla luna, quelle bugiarde.</span>
+          <span class="poem-line">Vedo la sua schiena e la rifletto fedelmente.</span>
+          <span class="poem-line">Lei mi ricompensa con lacrime e un agitare di mani.</span>
+          <span class="poem-line">Sono importante per lei. Va e viene.</span>
+          <span class="poem-line">Ogni mattina è sua la faccia che prende il posto del buio.</span>
+          <span class="poem-line">In me ha annegato una ragazza e in me una vecchia</span>
+          <span class="poem-line">sale verso di lei giorno dopo giorno come un pesce tremendo.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOX PLATH -->
+    <div class="box-plath">
+      <p>Sylvia Plath (Boston, 1932 — Londra, 1963) è una delle voci più intense della cosiddetta <em>confessional poetry</em> americana. <em>Mirror</em> fu scritto nel 1961 e pubblicato postumo nella raccolta <em>Ariel</em> (1965), uscita due anni dopo la sua morte.</p>
+    </div>
+
+    <p class="ponte">Lo specchio racconta alla donna una verità dolorosa: sta invecchiando. La sua crudeltà deriva dalla sua fedeltà assoluta: non mente, non può, è esatto e rigoroso.</p>
+
+    <div class="key-line">Lo specchio di Omar Lorenzoni, invece, mente, deliberatamente, come solo la fotografia sa fare.</div>
+
+    <p>Non promette oggettività né fedeltà. Non è rigoroso, non inghiotte la realtà così com'è. Deforma, piega, trasforma. E proprio perché non promette verità, non può tradire. Ci comunica invece qualcosa di più utile. Ci dice che possiamo essere imperfetti: noi, le cose che guardiamo, il mondo che abitiamo.</p>
+    <p>Lo specchio che Lorenzoni usa non è semplicemente curvo: è una composizione di superfici convesse e concave, come la superficie dell'acqua mossa dal vento, che genera riflessi imprevedibili, irripetibili, impossibili da controllare. Ogni minimo spostamento (della fotocamera, dello specchio, della luce) produce un'immagine completamente diversa. Il fotografo non ambisce più a controllare l'immagine: impara ad aspettarla.</p>
+    <p>Attraverso questo processo, completamente analogico, Lorenzoni assume anche una postura etica. Queste immagini sarebbero tecnicamente realizzabili dall'intelligenza artificiale, ma sarebbero inconcepibili per lei. L'algoritmo ottimizza verso la perfezione statistica: corregge, tende alla media, riporta tutto verso la forma attesa. In questa matematica ricerca della "perfezione", si perdono l'errore, l'eccezione e l'unicità. L'IA "non sa" che quella deformazione è bella forse proprio perché è, irriducibilmente, "sbagliata".</p>
+    <p>Lorenzoni invece lo sa, e fa emergere dai suoi specchi oggetti (nature morte, strumenti, forme) inauditi, mai esistiti prima. Come "pesci tremendi" che salgono dalla luce: qualcosa che non ci aspettavamo di vedere, e che ora non riusciamo a non vedere.</p>
+    <p>Davanti a queste immagini molti riconosceranno facce, animali, presenze che l'autore non ha inteso mettere lì. Questo fenomeno, chiamato <em>pareidolia</em>, è la tendenza della mente umana a trovare forme familiari nel caos. Omar non le ha cercate, ma voi le troverete. Sono oggetti che oscillano tra astrattismo ed espressionismo: la forma non si dissolve nella geometria muta, ma continua a parlare in modo soggettivo, diverso per ciascuno. L'altrove che vedete è tutto vostro.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- NOTA FINALE -->
+  <section>
+    <h2 class="sec-title">Una nota finale</h2>
+    <p>Le fotografie di Omar Lorenzoni possono sembrare, a prima vista, rassicuranti: armonie di colore, forme che rimandano al familiare, equilibri visivi che quasi accarezzano. Ma se ci si ferma, e si guarda davvero, si avverte qualcosa di diverso. Un senso di inquietudine che i colori solo parzialmente attenuano. Una domanda senza risposta. Uno specchio che mente, ma che in quella menzogna dice qualcosa di vero.</p>
+
+    <p class="chiusura">È questa, forse, la bellezza dell'imperfetto.</p>
+
+    <p>Buona visita, o meglio: buon attraversamento.</p>
+
+    <p class="firma">— Giulia Lorenzoni</p>
+
+    <p class="magritte">Questa non è una guida.<br><span style="font-style:normal; font-size:0.78rem; color: var(--rule);">In omaggio a René Magritte.</span></p>
+  </section>
+
+</div>
+
+<footer>
+  <p>Omar Lorenzoni · <em>La bellezza dell'imperfetto</em></p>
+  <p>Rocca Rangoni, Spilamberto · 15 marzo – 6 aprile 2026</p>
+</footer>
+
+</body>
+</html>
